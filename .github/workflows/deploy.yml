@@ -63,4 +63,6 @@ jobs:
 
       - name: Release
         run: yarn release
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
 
