@@ -33,3 +33,9 @@ repository or on a pull request.
 Continuous Deployment (CD): is the practice of automating the deployment of code changes to a production environment.
 This means that you can set up github actions to deploy your code to a server, a cloud provider, etc. once you are 
 ready to release a new version of your software.
+
+By default, github actions have got the GITHUB_TOKEN secret, which is a token that allows the action to interact with the
+github API. This token is automatically created by github and is available to all actions. You can use this token to
+create issues, pull requests, etc. from your actions. 
+If you want to push to the repository tho, you need to update the permissions of the token and you can do it right in
+the worflow file using the `permissions` key.
