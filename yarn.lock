@@ -1037,7 +1037,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "github-actions-playground@workspace:."
   dependencies:
-    release-it: "npm:^18.1.2"
+    release-it: "npm:18.1.2"
   languageName: unknown
   linkType: soft
 
@@ -1964,7 +1964,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"release-it@npm:^18.1.2":
+"release-it@npm:18.1.2":
   version: 18.1.2
   resolution: "release-it@npm:18.1.2"
   dependencies:
