@@ -50,9 +50,6 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.PAT }}
 
     steps:
-      - name: Echo GITHUB_TOKEN
-        run: echo $GITHUB_TOKEN
-
       - name: Checkout
         uses: actions/checkout@v4
 
