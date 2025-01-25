@@ -4,7 +4,7 @@
   "scripts": {
     "release": "release-it",
     "build": "tsc",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint ./src"
   },
   "devDependencies": {
     "@eslint/js": "9.19.0",
