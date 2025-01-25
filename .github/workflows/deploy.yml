@@ -8,5 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Echo
-        run: echo "Hello, world!"
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup
+        uses: ./.github/actions/setup
