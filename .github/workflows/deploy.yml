@@ -13,3 +13,6 @@ jobs:
 
       - name: Setup
         uses: ./.github/actions/setup
+
+      - name: Build
+        run: yarn build
