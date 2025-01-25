@@ -78,7 +78,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.19.0, @eslint/js@npm:^9.19.0":
+"@eslint/js@npm:9.19.0":
   version: 9.19.0
   resolution: "@eslint/js@npm:9.19.0"
   checksum: 10c0/45dc544c8803984f80a438b47a8e578fae4f6e15bc8478a703827aaf05e21380b42a43560374ce4dad0d5cb6349e17430fc9ce1686fed2efe5d1ff117939ff90
@@ -1176,7 +1176,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.19.0":
+"eslint@npm:9.19.0":
   version: 9.19.0
   resolution: "eslint@npm:9.19.0"
   dependencies:
@@ -1502,12 +1502,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "github-actions-playground@workspace:."
   dependencies:
-    "@eslint/js": "npm:^9.19.0"
-    eslint: "npm:^9.19.0"
-    globals: "npm:^15.14.0"
+    "@eslint/js": "npm:9.19.0"
+    eslint: "npm:9.19.0"
+    globals: "npm:15.14.0"
     release-it: "npm:18.1.2"
     typescript: "npm:5.7.3"
-    typescript-eslint: "npm:^8.21.0"
+    typescript-eslint: "npm:8.21.0"
   languageName: unknown
   linkType: soft
 
@@ -1552,17 +1552,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"globals@npm:15.14.0":
+  version: 15.14.0
+  resolution: "globals@npm:15.14.0"
+  checksum: 10c0/039deb8648bd373b7940c15df9f96ab7508fe92b31bbd39cbd1c1a740bd26db12457aa3e5d211553b234f30e9b1db2fee3683012f543a01a6942c9062857facb
+  languageName: node
+  linkType: hard
+
 "globals@npm:^14.0.0":
   version: 14.0.0
   resolution: "globals@npm:14.0.0"
   checksum: 10c0/b96ff42620c9231ad468d4c58ff42afee7777ee1c963013ff8aabe095a451d0ceeb8dcd8ef4cbd64d2538cef45f787a78ba3a9574f4a634438963e334471302d
-  languageName: node
-  linkType: hard
-
-"globals@npm:^15.14.0":
-  version: 15.14.0
-  resolution: "globals@npm:15.14.0"
-  checksum: 10c0/039deb8648bd373b7940c15df9f96ab7508fe92b31bbd39cbd1c1a740bd26db12457aa3e5d211553b234f30e9b1db2fee3683012f543a01a6942c9062857facb
   languageName: node
   linkType: hard
 
@@ -2990,7 +2990,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript-eslint@npm:^8.21.0":
+"typescript-eslint@npm:8.21.0":
   version: 8.21.0
   resolution: "typescript-eslint@npm:8.21.0"
   dependencies:
