@@ -66,6 +66,11 @@ jobs:
           git config --global user.name "${GITHUB_ACTOR}"
           git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
+      - name: Push empty commit
+        run: |
+          git commit --allow-empty -m "chore: test env"
+          git push
+
       - name: Release
         run: yarn release
 
