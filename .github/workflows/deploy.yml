@@ -2,6 +2,9 @@ name: release
 
 on: workflow_dispatch
 
+env:
+  GITHUB_TOKEN: ${{ secrets.PAT }}
+
 jobs:
   build:
     name: Build
@@ -45,9 +48,6 @@ jobs:
 # This permissions block grants the GITHUB_TOKEN the permissions required to make a Release
 #    permissions:
 #      contents: write
-
-    env:
-      GITHUB_TOKEN: ${{ secrets.PAT }}
 
     steps:
       - name: Checkout
