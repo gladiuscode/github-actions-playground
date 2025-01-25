@@ -54,6 +54,11 @@ jobs:
         with:
           name: build-artifact
 
+      - name: Configure Git User
+        run:
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
       - name: Release
         run: yarn release
         env:
