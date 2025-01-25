@@ -17,6 +17,12 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: build
+
   lint:
     name: Lint
     runs-on: ubuntu-latest
