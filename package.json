@@ -2,7 +2,7 @@
   "name": "github-actions-playground",
   "packageManager": "yarn@4.6.0",
   "scripts": {
-    "release": "release-it",
+    "release": "release-it -ci",
     "build": "tsc",
     "lint": "eslint ./src"
   },
