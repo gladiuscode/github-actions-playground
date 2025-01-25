@@ -1,0 +1,12 @@
+name: release
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Echo
+        run: echo "Hello, world!"
