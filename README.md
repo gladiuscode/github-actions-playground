@@ -24,6 +24,12 @@ approach to the bypass procedure.
 This workflow shows how to pass artifacts from one job to another.
 Take a look at the [pass-artifacts-to-next-job](./docs/pass-artifacts-to-next-jobs.md) document to see how to set it up.
 
+### Pull Request Code Checks
+
+This workflow shows how to run code checks on a pull request that targets the main branch, it runs the `build` and `lint`
+scripts.
+Take a look at the [pull-request-code-checks](./docs/pull-request-code-checks.md) document to see how to set it up.
+
 ## Useful links
 
 - [Github Actions Documentation](https://docs.github.com/en/actions)
