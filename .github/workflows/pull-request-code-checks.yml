@@ -1,9 +1,10 @@
 name: pull-request-code-checks
 
 on:
-  pull_request:
+  pull_request_review:
     branches:
       - main
+    types: [ submitted ]
 
 jobs:
   build:
