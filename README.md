@@ -19,7 +19,12 @@ using a Github App that has been added to the bypass list in the branch protecti
 Take a look at the [release-it-setup](./docs/release-it-setup.md) document to see how to set it up and an alternative
 approach to the bypass procedure.
 
-### Useful links
+### Pass artifacts to next jobs
+
+This workflow shows how to pass artifacts from one job to another.
+Take a look at the [pass-artifacts-to-next-job](./docs/pass-artifacts-to-next-jobs.md) document to see how to set it up.
+
+## Useful links
 
 - [Github Actions Documentation](https://docs.github.com/en/actions)
 
