@@ -1,5 +1,13 @@
 # Changelog
 
+# [0.2.0](https://github.com/gladiuscode/github-actions-playground/compare/0.1.1...0.2.0) (2025-01-26)
+
+
+### Features
+
+* create pull-request-code-checks ([#7](https://github.com/gladiuscode/github-actions-playground/issues/7)) ([5b832c3](https://github.com/gladiuscode/github-actions-playground/commit/5b832c3d0146e63280a409474052bc0a7f8cf8b9))
+* improve release-it git commit message ([#8](https://github.com/gladiuscode/github-actions-playground/issues/8)) ([d3a5e5b](https://github.com/gladiuscode/github-actions-playground/commit/d3a5e5bcc322846ead4b6e48766bbb14a5483612))
+
 ## [0.1.1](https://github.com/gladiuscode/github-actions-playground/compare/0.1.0...0.1.1) (2025-01-26)
 
 
