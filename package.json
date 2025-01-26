@@ -1,7 +1,7 @@
 {
   "name": "github-actions-playground",
   "description": "Playground to learn and save all github-actions template I use on my open source projects.",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "packageManager": "yarn@4.6.0",
   "scripts": {
     "release": "release-it",
