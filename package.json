@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "packageManager": "yarn@4.6.0",
   "scripts": {
-    "release": "release-it --ci",
+    "release": "release-it --dry-run",
     "build": "tsc",
     "lint": "eslint ./src"
   },
