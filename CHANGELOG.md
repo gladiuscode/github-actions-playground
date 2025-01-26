@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/gladiuscode/github-actions-playground/compare/0.1.0...0.1.1) (2025-01-26)
+
+
+### Bug Fixes
+
+* release-it workflows names ([#6](https://github.com/gladiuscode/github-actions-playground/issues/6)) ([8d9dec6](https://github.com/gladiuscode/github-actions-playground/commit/8d9dec64f989a339c83a9f5669b952d78b10ddef))
+
 # 0.1.0 (2025-01-26)
 
 
