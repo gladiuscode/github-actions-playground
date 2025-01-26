@@ -1,5 +1,6 @@
 {
   "name": "github-actions-playground",
+  "version": "0.0.0",
   "packageManager": "yarn@4.6.0",
   "scripts": {
     "release": "release-it --ci",
@@ -15,7 +16,6 @@
     "typescript": "5.7.3",
     "typescript-eslint": "8.21.0"
   },
-  "version": "0.0.5",
   "engines": {
     "node": "=18.20.6"
   }
