@@ -1,4 +1,4 @@
-name: release
+name: release-without-pr-only
 
 on: workflow_dispatch
 
