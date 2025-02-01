@@ -78,4 +78,6 @@ jobs:
         env:
           # (4) Make GITHUB_TOKEN available to release-it but use the GitHub App token
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          # (5) Make NPM_ACCESS_TOKEN available to release-it and npm publish command
+          NPM_ACCESS_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
 
