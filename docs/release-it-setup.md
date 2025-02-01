@@ -2,7 +2,7 @@
 
 This document describes how to set up [release-it](https://github.com/release-it/release-it) to run in a Github Actions workflow.
 
-## Prerequisities
+## Prerequisites
 
 - You have installed [release-it](https://github.com/release-it/release-it) in your project;
 - You have a `release` script in your `package.json` that runs `release-it` with --ci flag;
