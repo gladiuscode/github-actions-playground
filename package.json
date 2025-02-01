@@ -1,7 +1,7 @@
 {
-  "name": "github-actions-playground",
+  "name": "ga-playground",
   "description": "Playground to learn and save all github-actions template I use on my open source projects.",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "packageManager": "yarn@4.6.0",
   "author": "Mirko Quaglia <gladiusservices@protonmail.com> (https://github.com/gladiuscode)",
   "main": "build/index",
