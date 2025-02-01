@@ -3,6 +3,16 @@
   "description": "Playground to learn and save all github-actions template I use on my open source projects.",
   "version": "0.2.0",
   "packageManager": "yarn@4.6.0",
+  "author": "Mirko Quaglia <gladiusservices@protonmail.com> (https://github.com/gladiuscode)",
+  "main": "build/index",
+  "source": "src/index",
+  "files": [
+    "src",
+    "build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
   "scripts": {
     "release": "release-it",
     "build": "tsc",
@@ -19,5 +29,20 @@
   },
   "engines": {
     "node": "=18.20.6"
-  }
+  },
+  "keywords": [
+    "github-actions",
+    "github",
+    "actions",
+    "playground",
+    "template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gladiuscode/github-actions-playground.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "license": "MIT"
 }
