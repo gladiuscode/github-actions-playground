@@ -14,7 +14,7 @@
     "!**/__mocks__"
   ],
   "scripts": {
-    "release": "release-it",
+    "release": "release-it --ci --dry-run",
     "build": "tsc",
     "lint": "eslint ./src"
   },
