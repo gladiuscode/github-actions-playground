@@ -7,7 +7,7 @@
     "release": true
   },
   "npm": {
-    "publish": false
+    "publish": true
   },
   "plugins": {
     "@release-it/conventional-changelog": {
@@ -15,12 +15,10 @@
         "name": "angular",
         "types": {
           "feat": {
-            "section": "Features",
-            "hidden": false
+            "section": "Features"
           },
           "fix": {
-            "section": "Bug Fixes",
-            "hidden": false
+            "section": "Bug Fixes"
           }
         }
       },
