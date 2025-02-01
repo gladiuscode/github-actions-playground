@@ -1,63 +1,16 @@
 # Pass artifacts to next jobs
 
-When you have a workflow with multiple jobs and you need to pass artifacts (products) from one job to the next ones,
-you can use the `needs` keyword and a couple of actions from the GitHub Marketplace.
+This document describes how to pass artifacts from one job to the next ones.
 
-The `needs` keyword allows you sequence the jobs in a workflow. You can specify that a job can only run after another 
-job has completed successfully. This is required when you need to pass artifacts from one job to another.
+Artifacts are the files created by a job that you want to persist after the job has completed. They may be log files or
+build outputs that you want to include in a release, for example in a npm package as the product of `tsc`.
 
-To actually pass the artificats, you can use the `upload-artifact` and `download-artifact` actions from the GitHub
-Marketplace. The `upload-artifact` action allows you to upload a file or directory as an artifact. The `download-artifact`
-action allows you to download an artifact from a previous job.
+When you have a workflow with multiple jobs, and you need to pass artifacts from one job to the next ones, you need to
+use the `needs` keyword to sequence your job to run after a previous one has completed and a couple of actions from the
+GitHub Marketplace.
 
-Take a look at the following example:
+To pass the artifacts, you can use the [upload-artifact](https://github.com/actions/upload-artifact) and [download-artifact](https://github.com/actions/download-artifact)
+actions from the GitHub Marketplace. The `upload-artifact` action allows you to upload a file or directory as an artifact,
+while the `download-artifact`action allows you to download an artifact from a previous job.
 
-```yaml
-
-name: pass-artifacts-to-next-jobs
-
-on: workflow_dispatch
-
-jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup
-        uses: ./.github/actions/setup
-
-      - name: Build
-        run: yarn build
-
-      - name: Upload Build Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-artifact
-          path: build
-
-  run-build:
-    name: Run build
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup
-        uses: ./.github/actions/setup
-
-      - name: Download Build Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: build-artifact
-
-      - name: Run
-        # This assumes that your build artifacts is an index.js
-        run: node index.js
-
-```
+Take a look at the workflow here: [.github/workflows/pass-artifacts-to-next-jobs.yml](../.github/workflows/pass-artifacts-to-next-jobs.yml)

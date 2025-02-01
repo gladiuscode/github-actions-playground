@@ -1,101 +1,53 @@
-## If you allow direct pushes to the main branch
+# Release It Setup
 
-```yaml
+This document describes how to set up [release-it](https://github.com/release-it/release-it) to run in a Github Actions workflow.
 
-name: release
+## Prerequisites
 
-on: workflow_dispatch
+- You have installed [release-it](https://github.com/release-it/release-it) in your project;
+- You have a `release` script in your `package.json` that runs `release-it` with --ci flag;
 
-jobs:
+Depending on your repository settings, you may need to set up a [Github App](https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps) 
+to create a token that allows release-it to push on main, bypassing the branch protection rules that require pull requests.
+The Github App needs to be installed on the repository and have the `Contents`, `Actions` and `Administration` permissions
+to properly work.
 
-  release:
-    name: Release
-    runs-on: ubuntu-latest
-    needs: build
+If you need to publish to npm too, you need to create an automation token to authenticate with npm and bypass the 2FA
+requirement. You can create an automation token directly in the [npm website](https://www.npmjs.com/).
 
-    # (1) Give GIT_TOKEN permission to push to the repository
-    # By default, the GITHUB_TOKEN does not have permission to push to the repository
-    permissions:
-      contents: write
+## Available Workflows
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+### release-it-without-pr-only
 
-      # This is a custom action that sets up the environment
-      - name: Setup
-        uses: ./.github/actions/setup
+This workflow showcases how to set up release-it on a repository with an unprotected main branch. It doesn't require any
+particular setup, as the GITHUB_TOKEN, with content permissions set to write, is enough to push to the main branch.
 
-      # (2) Configure a git user to make the release
-      # This is required to identify the user
-      - name: Configure Git User
-        run: |
-          git config --global user.name "${GITHUB_ACTOR}"
-          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+Take a look at the workflow here: [.github/workflows/release-it-without-pr-only.yml](../.github/workflows/release-it-without-pr-only.yml)
 
-      - name: Release
-        run: yarn release
-        env:
-          # (3) Provide the GITHUB_TOKEN to release-it
-          # This is required to identify the user who made the release
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+### release-it-with-pr-only
 
-```
+This workflow showcases how to set up release-it on a repository with a ruleset that only allows PRs to the main branch.
+It needs a GitHub App added to the bypass list of the ruleset and a token created by the GitHub App to push to the 
+main branch using the [actions/create-github-app-token](https://github.com/actions/create-github-app-token) action.
+This token is then used to checkout the main branch and push the changes made by release-it.
 
-## If you don't allow direct pushes to the main branch
+Before running this workflow, you need to add both the GitHub App id and private key secrets to your repository with the
+values associated with the GitHub App you created.
 
-You need to create a GitHub App and add it to the bypass list in your rules. 
-See [here](https://github.com/orgs/community/discussions/13836#discussioncomment-8535364)
+> [!IMPORTANT]
+> If you are using this workflow in a repository owned by an organization, you need to create an organization-wide GitHub
+> App.
 
-```yaml
+Take a look at the workflow here: [.github/workflows/release-it-with-pr-only.yml](../.github/workflows/release-it-with-pr-only.yml)
 
-name: release
+### release-it-with-npm-and-pr-only
 
-on: workflow_dispatch
+This workflow is an extension of the `release-it-with-pr-only` workflow that also publishes the package to npm. It 
+requires an automation token created in the npm website to authenticate with npm and bypass the 2FA requirement.
+It leverages the upload-artifact and download-artifact actions to pass additional build artifacts that needs to be
+published as well, like the `build` folder.
 
-jobs:
+Before running this workflow, you need to add the `NPM_ACCESS_TOKEN` secret to your repository with the value of the 
+automation token.
 
-  release:
-    name: Release
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      # (1) This action creates a token using the GitHub App
-      - uses: actions/create-github-app-token@v1
-        id: app-token
-        with:
-          # (1.1) Provide the App ID and Private Key
-          # Be sure to read the private key value from the .pem file that you downloaded from the GitHub App web page
-          # upon private key creation. (Not the SHA that you see in the GitHub App web page!!)
-          app-id: ${{ vars.APP_ID }}
-          private-key: ${{ secrets.PRIVATE_KEY }}
-    
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          # (2) Tell checkout to use the token created by the GitHub App
-          token: ${{ steps.app-token.outputs.token }}
-
-      # This is a custom action that sets up the environment
-      - name: Setup
-        uses: ./.github/actions/setup
-
-      # (3) Configure a git user to make the release
-      # This is required to identify the user
-      - name: Configure Git User
-        run: |
-          git config --global user.name "${GITHUB_ACTOR}"
-          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-    
-      - name: Release
-        run: yarn release
-        env:
-          # (4) Provide the GITHUB_TOKEN to release-it but use the token created by the GitHub App
-          # This is required to identify the user who made the release
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
-
-```
-
-
-
+Take a look at the workflow here: [.github/workflows/release-it-with-npm-and-pr-only.yml](../.github/workflows/release-it-with-npm-and-pr-only.yml)
