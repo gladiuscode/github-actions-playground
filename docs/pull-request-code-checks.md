@@ -1,53 +1,18 @@
 # Pull request code checks
 
+This document explains how to run code checks on a pull request.
+
+## Prerequisites
+
+- You have configured the required scripts to run the checks;
+
 When a new pull request is opened against the main branch, it is a good idea to run some checks on the code to make sure
-that it is up to the standards of the project.
+that it is up to the standards of the project, before merging it. 
+
 You can run it on every push, but it is better to run it only when a pull request is approved, to avoid reaching the
 limits of the Github Actions free tier.
 
-Take a look at the following example:
+The workflow provided by this repository runs eslint and typescript checks each time someone submits a review on a pull
+request.
 
-```yaml
-
-name: pull-request-code-checks
-
-on:
-  # (1) Run the workflow only when a pull request is:
-  # - opened against the main branch
-  # - and a review is submitted
-  pull_request_review:
-    branches:
-      - main
-    types: [ submitted ]
-
-jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup
-        uses: ./.github/actions/setup
-
-      - name: Build
-        run: yarn build
-
-  lint:
-    name: Lint
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup
-        uses: ./.github/actions/setup
-
-      - name: Lint
-        run: yarn lint
-
-```
-
+Take a look at the workflow here: [.github/workflows/pull-request-code-checks.yml](../.github/workflows/pull-request-code-checks.yml)
