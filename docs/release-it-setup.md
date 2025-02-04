@@ -51,3 +51,10 @@ Before running this workflow, you need to add the `NPM_ACCESS_TOKEN` secret to y
 automation token.
 
 Take a look at the workflow here: [.github/workflows/release-it-with-npm-and-pr-only.yml](../.github/workflows/release-it-with-npm-and-pr-only.yml)
+
+### release-it-with-npm-and-pr-only-and-inputs
+
+This workflow is an extension of the `release-it-with-npm-and-pr-only` workflow that also takes in an optional input to 
+test the release process.
+
+Take a look at the workflow here: [.github/workflows/release-it-with-npm-and-pr-only-and-inputs.yml](../.github/workflows/release-it-with-npm-and-pr-only-and-inputs.yml)
