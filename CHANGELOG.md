@@ -1,5 +1,20 @@
 # Changelog
 
+# [1.1.0](https://github.com/gladiuscode/github-actions-playground/compare/0.2.0...1.1.0) (2025-02-05)
+
+
+### Bug Fixes
+
+* release-it-with-npm-and-pr-only-and-inputs workflow step name ([#15](https://github.com/gladiuscode/github-actions-playground/issues/15)) ([3ad77c6](https://github.com/gladiuscode/github-actions-playground/commit/3ad77c6bafcd5aaf5a6abb37a36b259a5d084114))
+
+
+### Features
+
+* create issues templates ([#9](https://github.com/gladiuscode/github-actions-playground/issues/9)) ([731bfd5](https://github.com/gladiuscode/github-actions-playground/commit/731bfd544d66c24d4de3082b9e4d058fe8ef4154))
+* create release-it-to-npm-with-pr-only ([#11](https://github.com/gladiuscode/github-actions-playground/issues/11)) ([07e7dfe](https://github.com/gladiuscode/github-actions-playground/commit/07e7dfe89b88d3def350c922e348ff4d932145c1))
+* improve docs ([#13](https://github.com/gladiuscode/github-actions-playground/issues/13)) ([6df7b29](https://github.com/gladiuscode/github-actions-playground/commit/6df7b294458b5e94226e094e38cb2161221ec3ef))
+* release it with npm pr and inputs ([#14](https://github.com/gladiuscode/github-actions-playground/issues/14)) ([9e022e5](https://github.com/gladiuscode/github-actions-playground/commit/9e022e53ec03562c18d1c7ab169407fc424da55a))
+
 # [0.2.0](https://github.com/gladiuscode/github-actions-playground/compare/0.1.1...0.2.0) (2025-01-26)
 
 
